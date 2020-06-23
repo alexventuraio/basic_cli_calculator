@@ -19,4 +19,15 @@ describe Calculator do
       expect(subject).to_not respond_to :result=
     end
   end
+
+  describe 'basic operations' do
+    subject(:calc) { described_class.new }
+
+    it 'can add' do
+      calc.add(2)
+      expect(calc.result).to eq(2)
+      calc.add(3)
+      expect(calc.result).to eq(5)
+    end
+  end
 end
