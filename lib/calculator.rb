@@ -5,6 +5,10 @@ class Calculator
     @result = 0.to_f
   end
 
+  def reset
+    @result = 0
+  end
+
   def add(amount)
     # validate if amount is a numeric value
     @result += amount

@@ -27,6 +27,11 @@ describe Calculator do
       calc.add(2)
     end
 
+    it 'can reset' do
+      calc.reset
+      expect(calc.result).to eq(0)
+    end
+
     it 'can add' do
       calc.add(3)
       expect(calc.result).to eq(5)
