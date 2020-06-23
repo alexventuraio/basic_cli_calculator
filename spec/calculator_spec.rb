@@ -23,11 +23,30 @@ describe Calculator do
   describe 'basic operations' do
     subject(:calc) { described_class.new }
 
+    before(:example) do
+      calc.add(2)
+    end
+
     it 'can add' do
       calc.add(2)
       expect(calc.result).to eq(2)
       calc.add(3)
       expect(calc.result).to eq(5)
+    end
+
+    it 'can subtract' do
+      calc.subtract(1)
+      expect(calc.result).to eq(1)
+    end
+
+    it 'can multiply' do
+      calc.multiply(2)
+      expect(calc.result).to eq(4)
+    end
+
+    it 'can divide' do
+      calc.divide(4)
+      expect(calc.result).to eq(0.5)
     end
   end
 end
