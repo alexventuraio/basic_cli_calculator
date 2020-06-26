@@ -5,8 +5,8 @@ class CoreCalculator
     @result = 0.to_f
   end
 
-  def reset
-    @result = 0
+  def reset(value = 0.0)
+    @result = value
   end
 
   def add(amount)

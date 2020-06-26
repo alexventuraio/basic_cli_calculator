@@ -32,6 +32,11 @@ describe CoreCalculator do
       expect(calc.result).to eq(0)
     end
 
+    it 'can reset to a given value' do
+      calc.reset(17)
+      expect(calc.result).to eq(17)
+    end
+
     it 'can add' do
       calc.add(3)
       expect(calc.result).to eq(5)
