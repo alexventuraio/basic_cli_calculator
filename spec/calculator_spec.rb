@@ -52,4 +52,32 @@ describe Calculator do
       expect(calc.result).to eq(0.5)
     end
   end
+
+  describe 'operation methods using "execute" method' do
+    subject(:calc) { described_class.new }
+
+    before(:example) do
+      calc.add(2)
+    end
+
+    it 'can add with ("add", value)' do
+      calc.execute('add', 4)
+      expect(calc.result).to eq(6)
+    end
+
+    it 'can subtract with ("subtract", value)' do
+      calc.execute('subtract', 5)
+      expect(calc.result).to eq(-3)
+    end
+
+    it 'can divide with ("divide", value)' do
+      calc.execute('divide', 4)
+      expect(calc.result).to eq(0.5)
+    end
+
+    it 'can multiply with ("multiply", value)' do
+      calc.execute('multiply', 10)
+      expect(calc.result).to eq(20)
+    end
+  end
 end

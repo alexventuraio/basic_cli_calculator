@@ -26,6 +26,21 @@ class Calculator
     @result /= amount
   end
 
+  def execute(operation, value)
+    operation.downcase!
+
+    case operation
+    when 'add'
+      add(value)
+    when 'subtract'
+      subtract(value)
+    when 'multiply'
+      multiply(value)
+    when 'divide'
+      divide(value)
+    end
+  end
+
   private
 
   def valid_number?(value)
