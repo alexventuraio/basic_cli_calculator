@@ -10,6 +10,7 @@ class Calculator
 
   def call
     render_view_welcome_msg
+    render_view_menu
   end
 end
 
