@@ -1,4 +1,4 @@
-class Calculator
+class CoreCalculator
   attr_reader :result
 
   def initialize

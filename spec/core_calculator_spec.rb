@@ -1,10 +1,10 @@
 require_relative 'spec_helper'
-require_relative '../lib/calculator'
+require_relative '../lib/core_calculator'
 
-describe Calculator do
+describe CoreCalculator do
   describe 'initialization' do
     it 'should be an instance of the calculator class' do
-      expect(subject).to be_an_instance_of(Calculator)
+      expect(subject).to be_an_instance_of(CoreCalculator)
     end
 
     it 'has a result attribute' do
