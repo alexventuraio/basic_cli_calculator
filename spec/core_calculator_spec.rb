@@ -3,7 +3,7 @@ require_relative '../lib/core_calculator'
 
 describe CoreCalculator do
   describe 'initialization' do
-    it 'should be an instance of the calculator class' do
+    it 'should be an instance of the core core_calculator class' do
       expect(subject).to be_an_instance_of(CoreCalculator)
     end
 
