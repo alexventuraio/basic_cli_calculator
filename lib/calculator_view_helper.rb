@@ -22,4 +22,12 @@ module CalculatorViewHelper
     puts '  +---+ +---+ +---+ +---+  '
     print "\n\n> "
   end
+
+  def render_view_quit
+    puts "\n\n===== Stopping... =====\n"
+  end
+
+  def render_view_exception(error_msg)
+    puts "\n********** Error: #{error_msg} **********"
+  end
 end
