@@ -10,7 +10,7 @@ class Calculator
 
   def call
     render_view_welcome_msg
-    render_view_menu
+    render_view_menu(0)
     keep_alive
   end
 
@@ -27,6 +27,8 @@ class Calculator
       else
         render_view_exception("Unknown command: '#{entry}'")
       end
+
+      render_view_menu(0)
     end
   end
 

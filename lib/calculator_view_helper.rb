@@ -3,9 +3,10 @@ module CalculatorViewHelper
     puts "\n\n===== Running to Alexalc 1.0 =====\n"
   end
 
-  def render_view_menu
+  def render_view_menu(value)
     puts "\n\n"
     puts '  -----------------------  '
+    puts "  #{value.to_s}"
     puts '  -----------------------  '
     puts '                           '
     puts '  +---------+ +---------+  '
