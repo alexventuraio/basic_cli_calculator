@@ -28,8 +28,12 @@ module CalculatorViewHelper
     print "\n\n> "
   end
 
-  def render_view_quit
-    puts "\n\n===== Stopping... =====\n"
+  def render_view_quit(final_result)
+    if @silent_mode
+      puts final_result
+    else
+      puts "\n\n===== Stopping... =====\n"
+    end
   end
 
   def render_view_exception(error_msg)

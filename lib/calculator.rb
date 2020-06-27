@@ -40,7 +40,7 @@ class Calculator
         @display_value = @calc.result
         @next_value = ''
       when entry.eql?('q')
-        render_view_quit
+        render_view_quit(@calc.result)
         break
       else
         render_view_exception("Unknown command: '#{entry}'")
