@@ -94,7 +94,7 @@ class Calculator
   end
 
   def get_user_input
-    gets.chomp
+    $stdin.gets.chomp
   end
 end
 
