@@ -4,7 +4,8 @@ require_relative 'calculator_view_helper'
 class Calculator
   include CalculatorViewHelper
 
-  def initialize
+  def initialize(silent_mode: false)
+    @silent_mode = silent_mode
     @calc = CoreCalculator.new
     @operation = nil
     @next_value = ''

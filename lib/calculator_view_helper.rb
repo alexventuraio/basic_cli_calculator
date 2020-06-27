@@ -1,9 +1,13 @@
 module CalculatorViewHelper
   def render_view_welcome_msg
+    return if @silent_mode
+
     puts "\n\n===== Running to Alexalc 1.0 =====\n"
   end
 
   def render_view_menu(value)
+    return if @silent_mode
+
     puts "\n\n"
     puts '  -----------------------  '
     puts "  #{value.to_s}"
@@ -29,6 +33,8 @@ module CalculatorViewHelper
   end
 
   def render_view_exception(error_msg)
+    return if @silent_mode
+
     puts "\n********** Error: #{error_msg} **********"
   end
 end
