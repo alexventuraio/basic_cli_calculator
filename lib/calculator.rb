@@ -14,10 +14,10 @@ class Calculator
   def call
     render_view_welcome_msg
     render_view_menu(@calc.result)
-    keep_alive
+    start_listening_commands
   end
 
-  def keep_alive
+  def start_listening_commands
     while entry = get_user_input
       entry.downcase!
 

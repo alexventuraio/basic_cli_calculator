@@ -10,7 +10,6 @@ class CoreCalculator
   end
 
   def add(amount)
-    # validate if amount is a numeric value
     @result += amount
   end
 
@@ -39,11 +38,5 @@ class CoreCalculator
     when 'divide'
       divide(value)
     end
-  end
-
-  private
-
-  def valid_number?(value)
-    value.is_a? (Number)
   end
 end
