@@ -26,6 +26,14 @@ class Calculator
         process_number(entry)
       when entry.eql?('+')
         process_operation('add')
+      when entry.eql?('-')
+        prepare_to_operate('subtract')
+      when entry.eql?('*')
+        prepare_to_operate('multiply')
+      when entry.eql?('/')
+        prepare_to_operate('divide')
+      when entry.eql?('=')
+        execute_result
       when entry.eql?('c')
         @calc.reset
       when entry.eql?('q')
