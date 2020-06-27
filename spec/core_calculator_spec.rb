@@ -1,4 +1,3 @@
-require_relative 'spec_helper'
 require_relative '../lib/core_calculator'
 
 describe CoreCalculator do
