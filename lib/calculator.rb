@@ -36,6 +36,8 @@ class Calculator
         execute_result
       when entry.eql?('c')
         @calc.reset
+        @display_value = @calc.result
+        @next_value = ''
       when entry.eql?('q')
         render_view_quit
         break
