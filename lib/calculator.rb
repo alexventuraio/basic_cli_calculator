@@ -6,6 +6,7 @@ class Calculator
 
   def initialize
     @calc = CoreCalculator.new
+    @operation = nil
     @next_value = ''
     @display_value = @calc.result
   end
@@ -23,6 +24,8 @@ class Calculator
       case
       when is_a_number?(entry)
         process_number(entry)
+      when entry.eql?('+')
+        process_operation('add')
       when entry.eql?('c')
         @calc.reset
       when entry.eql?('q')
@@ -37,6 +40,27 @@ class Calculator
   end
 
   private
+
+  def execute_result
+    @calc.execute(@operation, @next_value.to_f)
+    @operation = nil
+    @next_value = ''
+    @display_value = @calc.result
+  end
+
+  def process_operation(operation_name)
+    # When user clicks another operation instead of the '=' symbol
+    # Perform any pending operation if exists before continuing
+    execute_result if @operation
+
+    unless @next_value.empty?
+      @calc.reset(@next_value.to_f)
+      @display_value = @next_value
+      @next_value = ''
+    end
+
+    @operation = operation_name
+  end
 
   def process_number(entry)
     # Make sure to cast entries like '+5' into '5'
