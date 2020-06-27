@@ -97,5 +97,3 @@ class Calculator
     $stdin.gets.chomp
   end
 end
-
-Calculator.new.call
