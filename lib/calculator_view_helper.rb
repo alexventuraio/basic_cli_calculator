@@ -37,8 +37,10 @@ module CalculatorViewHelper
   end
 
   def render_view_exception(error_msg)
-    return if @silent_mode
-
-    puts "\n********** Error: #{error_msg} **********"
+    if @silent_mode
+      puts error_msg
+    else
+      puts "\n********** Error: #{error_msg} **********"
+    end
   end
 end
