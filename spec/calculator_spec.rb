@@ -38,12 +38,60 @@ describe Calculator do
       }.to output("139.6\n").to_stdout
     end
 
+    it 'should follow the process and return 0' do
+      expect {
+        simulate_stdin('750', '/', '3', '=', '-', '249', '*', '-0.5', '+', '0.5', '=', 'q') do
+          described_class.new(silent_mode: true).call
+        end
+      }.to output("0.0\n").to_stdout
+    end
+
     it 'should follow the process and return `Infinity`' do
       expect {
         simulate_stdin('50', '/', '0', '=', 'q') do
           described_class.new(silent_mode: true).call
         end
       }.to output("Infinity\n").to_stdout
+    end
+  end
+
+  describe 'accepted user entries' do
+    it 'should accept positive numbers like `+3`' do
+      expect {
+        simulate_stdin('4', '4', '+3', '*', '+1', '=', 'q') do
+          described_class.new(silent_mode: true).call
+        end
+      }.to output("443.0\n").to_stdout
+    end
+  end
+
+  describe 'wrong user entries' do
+    it 'should return an error message containing `Unknown command`.' do
+      expect {
+        simulate_stdin('x3', 'q') do
+          described_class.new(silent_mode: true).call
+        end
+      }.to output("Unknown command: 'x3'\n0.0\n").to_stdout
+
+      expect {
+        simulate_stdin('44-3', 'q') do
+          described_class.new(silent_mode: true).call
+        end
+      }.to output("Unknown command: '44-3'\n0.0\n").to_stdout
+
+      expect {
+        simulate_stdin('44++3', 'q') do
+          described_class.new(silent_mode: true).call
+        end
+      }.to output("Unknown command: '44++3'\n0.0\n").to_stdout
+    end
+
+    it 'should return an error message containing `Wrong numeric format!`.' do
+      expect {
+        simulate_stdin('4', '4', '-3', 'q') do
+          described_class.new(silent_mode: true).call
+        end
+      }.to output("Wrong numeric format!\n0.0\n").to_stdout
     end
   end
 end
