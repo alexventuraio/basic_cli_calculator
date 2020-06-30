@@ -61,10 +61,6 @@ It is important that you enter values kind of the same that you do in a real cal
 
 - Also you can enter negative numbers in one shot like this: `3 * (-1) = -3`
   ```
-  3245 ... enter
-
-  // ----- or -----
-
   3 ... enter
   * ... enter
   -1 ... enter
@@ -73,6 +69,10 @@ It is important that you enter values kind of the same that you do in a real cal
 
 - You can enter numbers in one shot or type one by one, for example, to enter `3245`:
   ```
+  3245 ... enter
+  
+  // ----- or -----
+  
   3 ... enter
   2 ... enter
   4 ... enter
